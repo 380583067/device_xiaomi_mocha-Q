@@ -24,14 +24,12 @@ BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_TINYHAL_AUDIO := false
 TARGET_LD_SHIM_LIBS := /system/vendor/lib/hw/audio.primary.vendor.tegra.so|libmocha_audio.so
 
-
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
-
 TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
 
 # Binder API
@@ -78,9 +76,15 @@ TARGET_EXFAT_DRIVER := sdfat
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_MKE2FS := true
 
+# Display
+#TARGET_SCREEN_DENSITY := 480
+
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_DISABLE_TRIPLE_BUFFERED_DISPLAY_SURFACES := true
+
+# Health _ Android-9.0
+#DEVICE_FRAMEWORK_MANIFEST_FILE := system/libhidl/vintfdata/manifest_healthd_exclude.xml
 
 # Gralloc
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000
@@ -89,12 +93,15 @@ TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x02000000
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
-
 # Include
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# Vendor Init
+TARGET_INIT_VENDOR_LIB      := libinit_mocha
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/libmocha/init_mocha.cpp
 
 # Kernel
 BOARD_KERNEL_CMDLINE := vpr_resize androidboot.selinux=permissive vmalloc=400M
@@ -102,14 +109,12 @@ BOARD_KERNEL_BASE := 0x10000000
 BOARD_RAMDISK_OFFSET := 0x02000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-
 TARGET_KERNEL_SOURCE := kernel/xiaomi/mocha
 TARGET_KERNEL_CONFIG := tegra12_android_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-
 #BOARD_SYSTEMIMAGE_PARTITION_SIZE := 671088640 # 640 Mb stock partition table
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1337564160 # 1.2 Gb
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 13742637056
@@ -139,9 +144,8 @@ MAX_EGL_CACHE_ENTRY_SIZE := 262144
 # PowerHAL
 TARGET_POWERHAL_VARIANT := tegra
 
-
 # Recovery
-TARGET_RECOVERY_DEVICE_DIRS += 
+TARGET_RECOVERY_DEVICE_DIRS += device/xiaomi/mocha
 TARGET_RECOVERY_FSTAB := device/xiaomi/mocha/initfiles/fstab.tn8
 BOARD_NO_SECURE_DISCARD := true
 
@@ -153,11 +157,12 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a15
 SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy/mocha \
                        $(LOCAL_PATH)/sepolicy/lineage-common \
-                       $(LOCAL_PATH)/sepolicy/common \
+                       $(LOCAL_PATH)/sepolicy/common
                       
 # SHIMS
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/libnvomxadaptor.so|libnvomxadaptor_shim.so 
+    /system/vendor/lib/hw/hwcomposer.tegra.so|/system/vendor/lib/libshim_camera.so \
+    /system/vendor/lib/libnvgr.so|libshim_atomic.so
 
 # ThermalHAL
 TARGET_THERMALHAL_VARIANT := tegra
@@ -171,10 +176,12 @@ BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
 WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P          := "/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-#WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0"
-#WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
-WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
+WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0"
+WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
+#WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
+
 # workaround for devices that uses old GPU blobs
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
                        
