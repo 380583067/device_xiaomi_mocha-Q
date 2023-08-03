@@ -82,6 +82,7 @@ TARGET_USES_MKE2FS := true
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_DISABLE_TRIPLE_BUFFERED_DISPLAY_SURFACES := true
+TARGET_DISABLE_POSTRENDER_CLEANUP := true
 
 # Health _ Android-9.0
 #DEVICE_FRAMEWORK_MANIFEST_FILE := system/libhidl/vintfdata/manifest_healthd_exclude.xml
