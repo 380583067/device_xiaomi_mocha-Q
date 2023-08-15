@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_mocha.mk
+    $(LOCAL_DIR)/carbon_mocha.mk
     
 COMMON_LUNCH_CHOICES := \
-    lineage_mocha-user \
-    lineage_mocha-userdebug \
-    lineage_mocha-eng
+    carbon_mocha-user \
+    carbon_mocha-userdebug \
+    carbon_mocha-eng

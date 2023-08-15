@@ -2,9 +2,9 @@
 $(call inherit-product, device/xiaomi/mocha/full_mocha.mk)
 
 # Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/carbon/config/common.mk)
 
-PRODUCT_NAME := lineage_mocha
+PRODUCT_NAME := carbon_mocha
 PRODUCT_DEVICE := mocha
 PRODUCT_BAND := xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
