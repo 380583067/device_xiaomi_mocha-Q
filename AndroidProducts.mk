@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_mocha.mk
+    $(LOCAL_DIR)/arrow_mocha.mk
     
 COMMON_LUNCH_CHOICES := \
-    aosp_mocha-user \
-    aosp_mocha-userdebug \
-    aosp_mocha-eng
+    arrow_mocha-user \
+    arrow_mocha-userdebug \
+    arrow_mocha-eng

@@ -2,13 +2,13 @@
 $(call inherit-product, device/xiaomi/mocha/full_mocha.mk)
 
 # Inherit some common lineage stuff.
-$(call inherit-product, vendor/aosp/config/common.mk)
+$(call inherit-product, vendor/arrow/config/common.mk)
 
 
 TARGET_GAPPS_ARCH := arm
-TARGET_BOOT_ANIMATION_RES := 1080p
 
-PRODUCT_NAME := aosp_mocha
+
+PRODUCT_NAME := arrow_mocha
 PRODUCT_DEVICE := mocha
 PRODUCT_BAND := xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
