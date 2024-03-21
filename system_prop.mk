@@ -9,7 +9,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.btmacaddr=03:16:6c:79:29:82
 
-
 #DIDIM
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.tegra.didim.enable = 1 \
