@@ -110,7 +110,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB      := libinit_mocha
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/libmocha/init_mocha.cpp
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/libmocha/init_mocha.cpp
 
 # Kernel
 BOARD_KERNEL_CMDLINE := vpr_resize androidboot.selinux=permissive vmalloc=400M
@@ -195,7 +195,7 @@ WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
 #WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 
 # workaround for devices that uses old GPU blobs
-BOARD_EGL_WORKAROUND_BUG_10194508 := true
+#BOARD_EGL_WORKAROUND_BUG_10194508 := true
                        
 # Zygote whitelist extra paths
 ZYGOTE_WHITELIST_PATH_EXTRA := \"/dev/nvhost-ctrl\",\"/dev/nvmap\",
