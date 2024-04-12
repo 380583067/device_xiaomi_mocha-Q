@@ -66,7 +66,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libbt-vendor \
-    libldacBT_dec \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service \
     android.hardware.bluetooth.a2dp@1.0-impl \
@@ -128,7 +127,6 @@ PRODUCT_AAPT_CONFIG += xlarge large
 TARGET_SCREEN_HEIGHT := 2048
 TARGET_SCREEN_WIDTH := 1536
 TARGET_TEGRA_VERSION := t124
-
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.composer@2.1-impl \
@@ -305,7 +303,6 @@ PRODUCT_COPY_FILES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-service-nvidia \
-    thermalhal.tn8.xml
 
 # TimeKeep
 PRODUCT_PACKAGES += \
@@ -342,8 +339,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/dhcpcd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/dhcpcd/dhcpcd.conf \
    
 # Wifi (All Shield devices xurrently use broadcom wifi / bluetooth modules)
-#    $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
-#    $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4354/device-bcm.mk)
+    #$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+    #$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4354/device-bcm.mk)
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service.legacy \
