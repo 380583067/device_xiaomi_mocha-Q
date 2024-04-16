@@ -18,5 +18,7 @@ index 3fc6a2d34..2c3201712 100644
  // ---------------------------------------------------------------------------
  
  }; // namespace android
++
 +__strong_alias(_ZN7android13GraphicBufferC1EjjijjP13native_handleb,_ZN7android13GraphicBufferC1EjjijjjP13native_handleb);
-\ No newline at end of file
+
+2.25.1
