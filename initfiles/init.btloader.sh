@@ -13,18 +13,15 @@ checkBkbPartition() {
 	echo "$TAG: attempt to read BKB partition"
 	#local BKB=$(cat /dev/block/platform/sdhci-tegra.3/by-name/BKB | grep -a XIAOMI)
 	#if [ "$BKB" = "" ]; then
-		bkbIsBroken=1
+	bkbIsBroken=1
 	#fi;
-} 
+}
 
 generateBtMac() {
 	echo "$TAG: generating bt mac address"
 	local btMac="${md5serialno:3:2}:${md5serialno:16:2}:${md5serialno:17:2}:${md5serialno:9:2}:${md5serialno:11:2}:${md5serialno:13:2}"
 	cd /
-	touch /system/system/vendor/etc/mocha_btmacaddr.txt
-	chmod 755 /system/system/vendor/etc/mocha_btmacaddr.txt
-	cd /
-	echo $btMac > /system/system/vendor/etc/mocha_btmacaddr.txt
+	echo $btMac >/system/system/vendor/etc/mocha_btmacaddr.txt
 	chown bluetooth:bluetooth /system/system/vendor/etc/mocha_btmacaddr.txt
 	setprop ro.bt.bdaddr_path /system/system/vendor/etc/mocha_btmacaddr.txt
 	setprop persist.service.bdroid.bdaddr $btMac
@@ -38,7 +35,7 @@ generateWifiMac() {
 	touch /system/system/vendor/etc/mocha_macaddr.txt
 	chmod 755 /system/system/vendor/etc/mocha_macaddr.txt
 	cd /
-	echo $wifiMac > /system/system/vendor/etc/mocha_macaddr.txt
+	echo $wifiMac >/system/system/vendor/etc/mocha_macaddr.txt
 }
 
 main() {
@@ -51,7 +48,7 @@ main() {
 		mount -o remount,ro /system
 	else
 		echo "$TAG: BKB partion is not broken"
-	fi;
+	fi
 }
 
 main

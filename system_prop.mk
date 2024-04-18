@@ -17,8 +17,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # BT
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.boot.btmacaddr=03:16:6c:79:29:82
-
+    #ro.boot.btmacaddr=03:16:6c:79:29:82
+    ro.bt.bdaddr_path=/system/vendor/etc/mocha_btmacaddr.txt
 
 #DIDIM
 PRODUCT_PROPERTY_OVERRIDES += \
