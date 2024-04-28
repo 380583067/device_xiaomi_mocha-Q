@@ -73,18 +73,23 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl
 
 # Camera
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/camera/nvcamera.conf:$(TARGET_COPY_OUT_VENDOR)/etc/nvcamera.conf \
-#    $(LOCAL_PATH)/camera/model_frontal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/model_frontal.xml
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/camera/nvcamera.conf:$(TARGET_COPY_OUT_VENDOR)/etc/nvcamera.conf \
+    $(LOCAL_PATH)/camera/model_frontal.xml:$(TARGET_COPY_OUT_VENDOR)/etc/model_frontal.xml
 
-#PRODUCT_PACKAGES += \
-#    android.hardware.camera.provider@2.4-impl \
-#    camera.device@1.0-impl \
-#    camera.tegra \
-#    libmocha_camera \
-#    libmocha_omx \
-#    libpowerservice_client \
-#    libmocha_libc
+PRODUCT_PACKAGES += \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-legacy \
+    libmocha_camera \
+    libmocha_omx \
+    libpowerservice_client \
+    libmocha_libc \
+    snap\
+    Camera2
+
+
 # Camera
 PRODUCT_PACKAGES += \
     libshim_camera
@@ -303,7 +308,6 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-service-nvidia \
     thermal.tn8.xml
 
 # TimeKeep

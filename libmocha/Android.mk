@@ -26,8 +26,9 @@ LOCAL_SRC_FILES:= \
         camera/CameraUtils.cpp \
         camera/VendorTagDescriptor.cpp \
         camera/CameraParameters.cpp \
-        #sensor.c \
         camera.c
+        #sensor.c \
+        
 
 
 LOCAL_SHARED_LIBRARIES := \

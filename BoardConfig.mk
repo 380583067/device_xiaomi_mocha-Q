@@ -54,9 +54,9 @@ TARGET_SCREEN_WIDTH := 1536
 TARGET_BOOTANIMATION_HALF_RES := true
 
 # Camera
-#TARGET_HAS_LEGACY_CAMERA_HAL1 := true
-#TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-#TARGET_LD_SHIM_LIBS += /system/vendor/lib/hw/camera.tegra.so|/system/vendor/lib/libcamera_shim.so
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+TARGET_LD_SHIM_LIBS += /system/vendor/lib/hw/camera.vendor.tegra.so|/system/vendor/lib/libcamera_shim.so
 
 # dexpre-opt
 ifeq ($(HOST_OS),linux)
