@@ -85,13 +85,11 @@ PRODUCT_PACKAGES += \
     libmocha_camera \
     libmocha_omx \
     libpowerservice_client \
-    libmocha_libc \
-    snap\
-    Camera2
+    libmocha_libc 
 
-
-# Camera
+# Camera shims
 PRODUCT_PACKAGES += \
+    libnvomxadaptor_shim \
     libshim_camera
 
 # Comm Permissions
@@ -114,7 +112,7 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    XiaomiDoze
+    XiaomiParts
 
 # fastbootd
 PRODUCT_PACKAGES += \

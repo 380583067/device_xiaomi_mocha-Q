@@ -175,7 +175,10 @@ BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy/mocha \
 # SHIMS
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/hw/hwcomposer.tegra.so|/system/vendor/lib/libshim_camera.so \
-    /system/vendor/lib/libnvgr.so|libshim_atomic.so
+    /system/vendor/lib/libnvcap_video.so|/system/vendor/lib/libshim_camera.so \
+    /system/vendor/lib/libnvgr.so|libshim_atomic.so \
+    /system/vendor/lib/libnvomxadaptor.so|libnvomxadaptor_shim.so 
+
 
 # ThermalHAL
 TARGET_THERMALHAL_VARIANT := tegra
