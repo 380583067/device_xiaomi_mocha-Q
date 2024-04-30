@@ -14,6 +14,7 @@ LOCAL_SHARED_LIBRARIES := \
     libhardware \
     liblog \
     libcamera_client \
+    libbase \
     libgui \
     libhidltransport \
     libsensor \
@@ -30,4 +31,14 @@ LOCAL_MODULE := camera.tegra
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := \
+    libcamera_shim.c
+
+LOCAL_SHARED_LIBRARIES := libutils
+LOCAL_MODULE := libcamera_shim
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
+
  
