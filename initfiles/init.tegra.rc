@@ -64,10 +64,10 @@ on post-fs-data
     mkdir /data/vendor/mediadrm 0770 mediadrm mediadrm
 
     # create directory for camera calibration data
-    mkdir /mnt/vendor/factory/camera 0666 system system
+    mkdir /mnt/factory/camera 0666 system system
 
     # create directory for camera cached data
-    mkdir /data/vendor/nvcam 0700 cameraserver camera
+    mkdir /data/nvcam 0700 media camera
 
     chown dhcp dhcp /data/vendor/dhcp
 
