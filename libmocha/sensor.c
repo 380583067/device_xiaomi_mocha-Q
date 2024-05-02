@@ -103,7 +103,6 @@ void _ZN7android13SensorManagerC1Ev(void *sensorMgr)
     void *string;
 
     _ZN7android8String16C1EPKc(&string, "camera.msm8916");
-    _ZN7android13SensorManagerC1ERKNS_8String16E(sensorMgr, &string);
     _ZN7android8String16D1Ev(&string);
 }
 
@@ -120,7 +119,6 @@ void _ZN7android13SensorManager16createEventQueueEv(void **retVal, void *sensorM
     void *string;
 
     _ZN7android7String8C1EPKc(&string, "");
-    _ZN7android13SensorManager16createEventQueueENS_7String8Ei(retVal, sensorMgr, &string, 0);
     _ZN7android7String8D1Ev(&string);
 }
 
@@ -145,7 +143,6 @@ void libEvtUnloading(void)
     ALOGV("Sensor manager interposition library unloading. Goodbye...");
     if (_ZN7android9SingletonINS_13SensorManagerEE9sInstanceE) {
         //if an instance stil exists, free it by calling the destructor, just to be throrough
-        _ZN7android13SensorManagerD1Ev(_ZN7android9SingletonINS_13SensorManagerEE9sInstanceE);
         _ZN7android9SingletonINS_13SensorManagerEE9sInstanceE = NULL;
     }
 }

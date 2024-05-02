@@ -78,7 +78,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/model_frontal.xml:system/etc/model_frontal.xml
 
 PRODUCT_PACKAGES += \
-    camera.device@1.0-impl \
+    camera.device@1.0-impl-legacy \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-legacy \
     camera.tegra \
