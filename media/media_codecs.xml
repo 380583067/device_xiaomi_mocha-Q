@@ -41,6 +41,14 @@
             <Limit name="bitrate" range="1-62500000" />
             <Feature name="adaptive-playback" />
         </MediaCodec>
+        <MediaCodec name="OMX.Nvidia.h265.decode" type="video/hevc" >
+            <Limit name="size" min="32x32" max="1920x1088" />
+            <Limit name="alignment" value="2x2" />
+            <Limit name="block-size" value="16x16" />
+            <Limit name="blocks-per-second" min="1" max="783360" />
+            <Limit name="bitrate" range="1-10000000" />
+            <Feature name="adaptive-playback" />
+        </MediaCodec>
         <MediaCodec name="OMX.Nvidia.mpeg2v.decode" type="video/mpeg2" >
             <Limit name="size" min="32x32" max="3840x2176" />
             <Limit name="alignment" value="2x2" />
