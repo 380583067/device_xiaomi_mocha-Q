@@ -29,16 +29,21 @@ PRODUCT_PACKAGES += $(PRODUCT_PACKAGES_SHIPPING_API_LEVEL_29)
     android.hardware.audio@2.0 \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
     audio.primary.tegra \
+    libaudiohalcm \
     libaudio-resampler \
     libaudiospdif \
     libstagefrighthw \
-    tinycap \
-    tinymix \
-    tinyplay \
-    libstlport \
-    libmocha_audio \
-    xaplay \
+    libtinycompress \
+    tinycap_mocha \
+    tinymix_mocha \
+    tinyplay_mocha \
+    libtinyalsa_mocha \
+    libtinyalsa \
+    xaplay 
 
 	
 PRODUCT_COPY_FILES += \
@@ -52,6 +57,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio.mocha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio.mocha.xml \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/nvaudio_conf.xml:system/etc/nvaudio_conf.xml \
+    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
     
 
 PRODUCT_COPY_FILES += \
@@ -108,8 +114,7 @@ PRODUCT_PACKAGES += \
 # DRM HAL
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.1-service.clearkey
+    android.hardware.drm@1.0-service 
 
 # Doze
 PRODUCT_PACKAGES += \
