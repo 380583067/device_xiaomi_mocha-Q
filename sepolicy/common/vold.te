@@ -83,3 +83,5 @@ allow vold make_f2fs_exec:file rx_file_perms;
 
 # Allow vold to access its tmpfs
 allow vold tmpfs:file create_file_perms;
+#
+allowxperm vold loop_device:blk_file ioctl LOOP_GET_STATUS64;
